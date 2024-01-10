@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Tambahkan tugas...">
+            <button onclick="addTask()">Tambah</button>
+        </div>
+        <ul id="taskList"></ul>
+
+        <!-- Formulir pengeditan -->
+        <div id="editForm" class="edit-form">
+            <h2>Edit Tugas</h2>
+            <input type="text" id="editTaskInput" placeholder="Ubah tugas...">
+            <button onclick="saveEditedTask()">Simpan</button>
+        </div>
+        <button id="editButton" style="display: none;"></button>
+    </div>
+    <script src="script.js"></script>
+</body>
+<style>
+    body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #2D4356, #AE445A);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.input-container {
+    padding: 10px; 
+    border: 1px solid #2D4356;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2D4356;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #eee;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+li button {
+    background-color: #AE445A;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #888; 
+    font-size: 20px;
+    text-align: justify;
+}
+
+.task-text {
+    font-size: 20px;
+    text-align: justify;
+}
+
+/* Gaya untuk formulir pengeditan */
+.edit-form {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.edit-form input {
+    width: 70%;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+
+.edit-form button {
+    padding: 5px 10px;
+    background-color: #2D4356;
+}
+
+</style>
+</html>
